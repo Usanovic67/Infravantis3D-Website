@@ -58,14 +58,10 @@ function SliderControls({
   index,
   total,
   onSelect,
-  onPrevious,
-  onNext,
 }: {
   index: number;
   total: number;
   onSelect: (index: number) => void;
-  onPrevious: () => void;
-  onNext: () => void;
 }) {
   return (
     <div className="flex items-center justify-center gap-2" aria-label={`Bild ${index + 1} von ${total}`}>
@@ -168,17 +164,6 @@ export default function Projekte() {
               index={featuredIndex}
               total={featuredProject.images.length}
               onSelect={setFeaturedIndex}
-              onPrevious={() =>
-                setFeaturedIndex(
-                  (featuredIndex - 1 + featuredProject.images.length) %
-                    featuredProject.images.length,
-                )
-              }
-              onNext={() =>
-                setFeaturedIndex(
-                  (featuredIndex + 1) % featuredProject.images.length,
-                )
-              }
             />
           </div>
         </section>
@@ -248,8 +233,6 @@ export default function Projekte() {
                         ),
                       )
                     }
-                    onPrevious={() => changeProjectImage(projectIndex, -1)}
-                    onNext={() => changeProjectImage(projectIndex, 1)}
                   />}
                 </article>
               );
