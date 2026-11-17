@@ -20,7 +20,7 @@ const services = [
   {
     number: "03",
     title: "Bestandspläne",
-    image: "Bestandspläne.png",
+    image: "bestandsplaene.png",
     description:
       "Aus den erfassten Daten erstellen wir Grundrisse, Schnitte und Ansichten. Damit erhalten Sie nachvollziehbare Planunterlagen zum dokumentierten Bestand. Welche Pläne, Maßstäbe und Details benötigt werden, klären wir anhand Ihrer Aufgabenstellung. Ihr Ergebnis: 2D-Bestandspläne in den vereinbarten CAD- und PDF-Formaten.",
     tags: ["Bestandspläne", "Technische Zeichnungen"],
