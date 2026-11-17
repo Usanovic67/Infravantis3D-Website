@@ -1,8 +1,10 @@
+import { publicImage } from "../utils/publicImage";
+
 const services = [
   {
     number: "01",
     title: "3D-Vermessung",
-    image: "/images/projekt2bild2.jpg",
+    image: "projekt2bild2.jpg",
     description:
       "Mit 3D-Laserscanning erfassen wir die Geometrie von Gebäuden, Industrieanlagen und technischen Konstruktionen. Dabei entsteht eine räumliche Punktwolke, die den aufgenommenen Bestand detailliert abbildet. Sie dient als Grundlage für die Ermittlung von Maßen, die Erstellung von Bestandsplänen und die weitere 3D-Modellierung. Messgenauigkeit und Aufnahmeumfang stimmen wir auf die Anforderungen Ihres Projekts ab. Ihr Ergebnis: Eine digitale Punktwolke der vereinbarten Bereiche.",
     tags: ["Bestandserfassung", "3D-Laserscanning"],
@@ -10,7 +12,7 @@ const services = [
   {
     number: "02",
     title: "BIM-Modellierung",
-    image: "/images/projekt2bild1.JPG",
+    image: "projekt2bild1.JPG",
     description:
       "Auf Grundlage der aufgenommenen Punktwolken erstellen wir BIM-fähige Modelle. Je nach Auftrag bilden diese beispielsweise Bauteile, Stahlkonstruktionen oder technische Anlagen ab. Modellumfang, Detaillierungsgrad und benötigte Bauteilinformationen vereinbaren wir vor Beginn der Bearbeitung. Die Übergabe erfolgt in den abgestimmten Dateiformaten, beispielsweise als natives Modell oder im offenen IFC-Format. Ihr Ergebnis: Ein strukturiertes 3D-Bestandsmodell für Ihre weitere Planung und Zusammenarbeit.",
     tags: ["Digitale Modelle", "BIM"],
@@ -18,7 +20,7 @@ const services = [
   {
     number: "03",
     title: "Bestandspläne",
-    image: "/images/Bestandspläne.png",
+    image: "Bestandspläne.png",
     description:
       "Aus den erfassten Daten erstellen wir Grundrisse, Schnitte und Ansichten. Damit erhalten Sie nachvollziehbare Planunterlagen zum dokumentierten Bestand. Welche Pläne, Maßstäbe und Details benötigt werden, klären wir anhand Ihrer Aufgabenstellung. Ihr Ergebnis: 2D-Bestandspläne in den vereinbarten CAD- und PDF-Formaten.",
     tags: ["Bestandspläne", "Technische Zeichnungen"],
@@ -56,7 +58,7 @@ export default function Leistungen() {
 
               <div className="overflow-hidden rounded-xl bg-[#E8E7E2]">
                 <img
-                  src={service.image}
+                  src={publicImage(service.image)}
                   alt={service.title}
                   className="aspect-[4/3] h-full w-full object-cover"
                   loading="lazy"

@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { publicImage } from "../utils/publicImage";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <div>
           <Link to="/" className="inline-block">
             <img
-              src="/images/infravantis-logo.png"
+              src={publicImage("infravantis-logo.png")}
               alt="Infravantis 3D"
               className="h-16 w-auto max-w-full object-contain"
             />

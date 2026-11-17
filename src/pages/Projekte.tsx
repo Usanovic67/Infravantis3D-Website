@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Reveal from "../components/Reveal";
+import { publicImage } from "../utils/publicImage";
 
 const featuredProject = {
   title: "3D-Vermessung",
   description:
     "Präzise Vermessung und digitale Erfassung als Grundlage für erfolgreiche Projekte.",
   images: [
-    "/images/projekt-haupt-1.png",
-    "/images/projekt-haupt-2.png",
-    "/images/projekt-haupt-3.png",
-    "/images/projekt-haupt-4.png",
+    "projekt-haupt-1.png",
+    "projekt-haupt-2.png",
+    "projekt-haupt-3.png",
+    "projekt-haupt-4.png",
   ],
 };
 
@@ -18,40 +19,40 @@ const projects = [
     title: "SCAN-TO-BIM",
     description: "INFRAVANTIS 3D erfasst Gebäude und technische Anlagen mittels 3D-Laserscanning und erstellt daraus BIM-Bestandsmodelle. Diese bilden eine verlässliche Grundlage für Umbau, Sanierung und Erweiterung – ergänzt durch 2D-Pläne und eine Übergabe im nativen Format sowie als IFC.",
     images: [
-      "/images/projekt2bild1.JPG",
-      "/images/projekt2bild2.jpg",
-      "/images/projekt2bild3.jpg",
+      "projekt2bild1.JPG",
+      "projekt2bild2.jpg",
+      "projekt2bild3.jpg",
     ],
   },
   {
     title: "Stahlbau",
     description: "Scan-to-BIM für den Umbau und die Modernisierung einer Produktionshalle. Eine millimetergenaue Punktwolke bildet die Grundlage.",
-    images: ["/images/projekt3bild1.png"],
+    images: ["projekt3bild1.png"],
   },
   {
     title: "TGA Projekt",
     description: "Sichtbare und zugängliche technische Installationen, beispielsweise Rohrleitungen, Lüftungskanäle und Kabeltrassen. Die digitale Dokumentation unterstützt Fachplaner bei Umbauten und bei der räumlichen Abstimmung verschiedener Gewerke.",
-    images: ["/images/projekt4bild3.jpg"],
+    images: ["projekt4bild3.jpg"],
   },
   {
     title: "Anlagenbau",
     description: "Vorhandene Anlagenstrukturen, Rohrleitungsverläufe und relevante Einbausituationen im vereinbarten Umfang. Punktwolken und 3D-Modelle helfen dabei, Erweiterungen und neue Komponenten unter Berücksichtigung des Bestands zu planen.",
-    images: ["/images/projekt4bild1.jpg", "/images/projekt4bild2.jpg"],
+    images: ["projekt4bild1.jpg", "projekt4bild2.jpg"],
   },
   {
     title: "Architektur",
     description: "Digitale Bestandsgrundlagen für Sanierungen, Umbauten und Erweiterungen. Grundrisse, Schnitte, Ansichten und BIM-Modelle unterstützen Architekten dabei, ihre Entwürfe auf den erfassten Gebäudebestand abzustimmen.",
-    images: ["/images/projekt6bild1.JPG", "/images/projekt6bild2.JPG"],
+    images: ["projekt6bild1.JPG", "projekt6bild2.JPG"],
   },
   {
     title: "Industrie",
     description: "Produktionshallen und bestehende Anlagenbereiche als Grundlage für Modernisierungen, Umnutzungen und Erweiterungen. Die erfassten Daten unterstützen die räumliche Planung neuer Einrichtungen innerhalb des vorhandenen Bestands.",
-    images: ["/images/industrie.png"],
+    images: ["industrie.png"],
   },
 ];
 
 function ProjectImage({ src, alt }: { src: string; alt: string }) {
-  return <img src={src} alt={alt} className="h-full w-full object-cover" />;
+  return <img src={publicImage(src)} alt={alt} className="h-full w-full object-cover" />;
 }
 
 function SliderControls({

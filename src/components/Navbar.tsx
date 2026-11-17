@@ -41,7 +41,7 @@ export default function Navbar() {
           onClick={() => setMobileMenuOpen(false)}
         >
           <img
-            src="/images/infravantis-logo1.png"
+            src={`${import.meta.env.BASE_URL}images/infravantis-logo1.png`}
             alt="Infravantis 3D"
 
             className="h-16 w-auto max-w-[260px] object-contain sm:h-25 sm:max-w-[320px] lg:h-35 lg:max-w-[380px]"

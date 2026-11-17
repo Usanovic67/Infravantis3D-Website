@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Reveal from "../components/Reveal";
+import { publicImage } from "../utils/publicImage";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           style={{
             backgroundImage: `
         linear-gradient(to right, rgba(11, 23, 34, 0.95) 0%, rgba(11, 23, 34, 0.65) 50%, rgba(11, 23, 34, 0.1) 100%),
-        url("/images/infravantis-hero.png")
+        url("${import.meta.env.BASE_URL}images/infravantis-hero.png")
       `,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -104,7 +105,7 @@ export default function Home() {
             >
               <div className="min-h-48 overflow-hidden rounded-xl bg-[#E8E7E2] sm:min-h-52">
                 <img
-                  src="/images/3Dvermessung.JPG"
+                  src={publicImage("3Dvermessung.JPG")}
                   alt="Digitale 3D-Vermessung eines Gebäudes"
                   className="h-full min-h-48 w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -132,7 +133,7 @@ export default function Home() {
             >
               <div className="min-h-48 overflow-hidden rounded-xl bg-[#E8E7E2] sm:min-h-52">
                 <img
-                  src="/images/projekt2bild1.JPG"
+                  src={publicImage("projekt2bild1.JPG")}
                   alt="Digitales BIM-Gebäudemodell"
                   className="h-full min-h-48 w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -160,7 +161,7 @@ export default function Home() {
             >
               <div className="min-h-48 overflow-hidden rounded-xl bg-[#E8E7E2] sm:min-h-52">
                 <img
-                  src="/images/plannungunterlagen.JPG"
+                  src={publicImage("plannungunterlagen.JPG")}
                   alt="Technische Gebäudepläne"
                   className="h-full min-h-48 w-full object-cover transition duration-500 group-hover:scale-105"
                 />
