@@ -69,7 +69,7 @@ export default function Navbar() {
           : ""
       }`}
     >
-      <div className="mx-auto flex max-w-[1800px] items-center justify-between gap-6 px-5">
+      <div className="mx-auto flex max-w-[1800px] items-center justify-between gap-3 px-2 sm:gap-6 sm:px-5">
         <NavLink
           to="/"
           aria-label="Infravantis 3D – Home"
@@ -79,15 +79,15 @@ export default function Navbar() {
             src={`${import.meta.env.BASE_URL}images/infravantis-logo1.png`}
             alt="Infravantis 3D"
 
-            className="h-16 w-auto max-w-[260px] object-contain sm:h-25 sm:max-w-[320px] lg:h-35 lg:max-w-[380px]"
+            className="h-25 w-auto max-w-[260px] object-contain sm:h-25 sm:max-w-[320px] lg:h-35 lg:max-w-[380px]"
           />
         </NavLink>
-        <nav className="flex min-h-[76px] min-w-0 flex-1 items-center justify-between gap-6 px-8 md:rounded-3xl md:border md:border-white/10 md:bg-[#0B1722] md:shadow-lg">
+        <nav className="flex min-h-0 min-w-0 flex-none items-center justify-end md:min-h-[76px] md:flex-1 md:justify-between md:gap-6 md:px-8 md:rounded-3xl md:border md:border-white/10 md:bg-[#0B1722] md:shadow-lg">
           <NavLink
             to="/"
             aria-label="Infravantis 3D – Home"
             onClick={() => setMobileMenuOpen(false)}
-            className="shrink-0"
+            className="min-w-0 shrink"
           ></NavLink>
 
           {/* Desktop navigation */}
