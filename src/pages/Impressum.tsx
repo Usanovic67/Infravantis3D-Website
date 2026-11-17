@@ -3,7 +3,7 @@ export default function Impressum() {
     <main className="min-h-screen bg-[#F8F7F4] text-[#102033]">
       {/* Page heading */}
       <section className="border-b border-[#102033]/10">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-15 lg:mt-25">
+        <div className="mx-auto max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:py-20 lg:px-10 lg:py-15 lg:mt-25">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#B18D70] sm:text-sm">
             INFRAVANTIS 3D · Rechtliche Informationen
           </p>

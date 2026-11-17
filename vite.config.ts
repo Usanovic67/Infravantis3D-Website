@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: "/Infravantis3D-Website/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/Infravantis3D-Website/" : "/",
   plugins: [react(), tailwindcss()],
-});
+}));

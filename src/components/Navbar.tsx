@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router";
 
 const navItems = [
@@ -10,6 +10,8 @@ const navItems = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -24,14 +26,47 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const showBackground = ["/leistungen", "/projekte", "/kontakt"].includes(
-    pathname,
-  );
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target as Node;
+      if (
+        !menuRef.current?.contains(target) &&
+        !menuButtonRef.current?.contains(target)
+      ) {
+        setMobileMenuOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
+  const showBackground = [
+    "/leistungen",
+    "/projekte",
+    "/kontakt",
+    "/impressum",
+    "/datenschutz",
+  ].includes(pathname);
+  const isLegalPage = ["/impressum", "/datenschutz"].includes(pathname);
 
   return (
     <header
       className={`absolute inset-x-0 top-0 z-50 px-5 pt-5 text-white sm:px-8 lg:px-10 ${
-        showBackground ? "bg-[#102033] pb-3" : ""
+        showBackground
+          ? `${isLegalPage ? "bg-[#0B1722] md:bg-transparent" : "bg-[#0B1722] md:bg-[#102033]"} pb-3`
+          : ""
       }`}
     >
       <div className="mx-auto flex max-w-[1800px] items-center justify-between gap-6 px-5">
@@ -85,6 +120,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
@@ -112,6 +148,7 @@ export default function Navbar() {
       {/* Mobile navigation */}
       {mobileMenuOpen && (
         <div
+          ref={menuRef}
           id="mobile-navigation"
           className="border-t border-white/10 bg-[#0B1722] px-5 pb-6 pt-2 md:hidden sm:px-8"
         >

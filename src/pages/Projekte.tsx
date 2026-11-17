@@ -8,8 +8,7 @@ const featuredProject = {
     "Präzise Vermessung und digitale Erfassung als Grundlage für erfolgreiche Projekte.",
   images: [
     "projekt-haupt-1.png",
-    "projekt-haupt-2.png",
-    "projekt-haupt-3.png",
+    "projekt-haupt-2.jpeg",
     "projekt-haupt-4.png",
   ],
 };
@@ -51,8 +50,16 @@ const projects = [
   },
 ];
 
-function ProjectImage({ src, alt }: { src: string; alt: string }) {
-  return <img src={publicImage(src)} alt={alt} className="h-full w-full object-cover" />;
+function ProjectImage({
+  src,
+  alt,
+  className = "h-full w-full object-cover",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return <img src={publicImage(src)} alt={alt} className={className} />;
 }
 
 function SliderControls({
@@ -124,11 +131,12 @@ export default function Projekte() {
             </p>
           </div>
 
-          <div className="group relative h-64 overflow-hidden rounded-2xl md:h-[480px]">
+          <div className="group relative overflow-hidden rounded-2xl md:h-[480px]">
             <Reveal>
               <ProjectImage
                 src={featuredProject.images[featuredIndex]}
                 alt={`${featuredProject.title} – Bild ${featuredIndex + 1}`}
+                className="h-auto w-full object-cover md:h-full"
               />
 
               <button
